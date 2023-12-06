@@ -2,6 +2,7 @@ build/
 nbproject/
 repository/
 docs/api
+logs/
 
 # Generated Images #
 ####################
