@@ -349,12 +349,14 @@ from scenarioDos import ScenarioDos
 from scenarioPrivesc import ScenarioPrivesc
 from scenarioGrafana import ScenarioGrafana
 from scenarioComposite import ScenarioComposite
+from scenario5GCore import Scenario5GCore
 def main():
     
     # Create the scenarios that can be chosen from
     scenarios = { 'dos': ScenarioDos(),
                   'privesc': ScenarioPrivesc(),
                   'grafana': ScenarioGrafana(),
+                  '5g': Scenario5GCore(),
                 }
     
     if( len(sys.argv) != 5  ):

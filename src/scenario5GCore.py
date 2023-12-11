@@ -19,7 +19,7 @@ class Scenario5GCore:
         """
         # Start the container for unauthorized executing shell on host.
         # Presumes cwd is container-escape-dataset, uses relative path
-        self._composeTemplate = '../containers/open5gs/open5gs'
+        self._composeTemplate = '../containers/open5gs-k8s/open5gs'
 
         #self.execute( 'sudo docker-compose -f ' + self._composeTemplate +  ' build' )
         self.execute('kubectl apply open5gs -n open5gs')
