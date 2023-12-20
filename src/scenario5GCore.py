@@ -22,7 +22,7 @@ class Scenario5GCore:
         self._composeTemplate = '../containers/open5gs-k8s/open5gs'
 
         #self.execute( 'sudo docker-compose -f ' + self._composeTemplate +  ' build' )
-        self.execute('kubectl apply open5gs -n open5gs')
+        self.execute('kubectl apply -k open5gs -n open5gs')
 
         # We have no escape/attack events but need to "annotate" the experiment
         annotationFile.annotateName( self._name )
@@ -52,7 +52,7 @@ class Scenario5GCore:
         Tears down the scenario, for example, stop container.
         Logging is not active
         """
-        self.execute( 'kubectl delete open5gs -n open5gs')
+        self.execute( 'kubectl delete -k open5gs -n open5gs')
 
     def execute( self, command ):
         """
