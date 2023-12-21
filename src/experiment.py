@@ -359,7 +359,7 @@ def main():
                   '5g': Scenario5GCore(),
                 }
     
-    if( len(sys.argv) != 5  ):
+    if( len(sys.argv) != 4  ):
         print('  Usage: <time in minutes> <directory to place log files> <scenario1> <scenario2>')
         print('Scenarios: ' + str(scenarios.keys()) )
         print('Example: 1 ../../logs grafana dos')
@@ -368,13 +368,13 @@ def main():
     seconds     = int(sys.argv[1]) * 60
     logDir      = sys.argv[2]
     scenarioOne = sys.argv[3] # expect "A" or "B"
-    scenarioTwo = sys.argv[4]
+    # scenarioTwo = sys.argv[4]
     
     
     
-    scenario = ScenarioComposite()
-    scenario.add( scenarios[scenarioOne] )
-    scenario.add( scenarios[scenarioTwo] )
+    scenario = scenarios[scenarioOne]
+    # scenario.add( scenarios[scenarioOne] )
+    # scenario.add( scenarios[scenarioTwo] )
         
     #annotationFile = AnnotationFile( os.path.join( logDir , 'annotated.txt') )
     experiment = Experiment( seconds, logDir, scenario )
