@@ -22,9 +22,7 @@ class Scenario5GCore:
         self._composeTemplate = '../containers/open5gs-k8s/open5gs'
 
         #self.execute( 'sudo docker-compose -f ' + self._composeTemplate +  ' build' )
-        self.execute('cd ../containers/open5gs-k8s')
-        self.execute('kubectl apply -k open5gs -n open5gs')
-        self.execute('cd ../../src')
+        self.execute('kubectl apply -k ../containers/open5gs-k8s/open5gs -n open5gs')
 
         # We have no escape/attack events but need to "annotate" the experiment
         annotationFile.annotateName( self._name )
